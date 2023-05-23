@@ -1,0 +1,129 @@
+//Check if a vowel is present in a string
+public class Test {
+    public static void main(String[] args) {
+
+        String str = "naveen";
+        boolean hasVowel = false;
+
+        for (char ch : str.toCharArray()) {
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                hasVowel = true;
+                break;
+            }
+        }
+        System.out.println(hasVowel ? "The string contains a vowel." : "The string does not contain a vowel.");
+    }
+}
+----------------------------------------------------
+
+//Count the number of vowels in a given string
+public class Test {
+    public static void main(String[] args) {
+        String str = "naveen";
+        int vowelCount = 0;
+
+        for (char ch : str.toCharArray()) {
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                vowelCount++;
+            }
+        }
+        System.out.println("The string contains " + vowelCount + " vowels.");
+    }
+}
+----------------------------------------------------
+
+//Count the number of vowels in a given string using Stream API
+public class Test {
+    public static void main(String[] args) {
+
+        String str = "naveen";
+        final var vowelCount = str.chars()
+                .filter(ch -> ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+                .count();
+
+        System.out.println("The string contains " + vowelCount + " vowels.");
+    }
+}
+____________________________________________________
+//How to remove spaces from a string in Java
+public class Test {
+    public static void main(String[] args) {
+
+        String str = " Naveen Kumar";
+        String newStr = str.replaceAll("\\s", "");
+        System.out.println("The new string is: " + newStr);
+    }
+}
+____________________________________________________
+
+public class Employee {
+    private String name;
+    private int age;
+
+    public Employee(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+----------------------------------------------------
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+public class EmployeeSortExample {
+    public static void main(String[] args) {
+        // Create a list of Employee objects
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new Employee("John", 30));
+        employees.add(new Employee("Alice", 25));
+        employees.add(new Employee("Bob", 35));
+
+        // Sort the employees by age using a Comparator and the Stream API
+        List<Employee> sortedEmployees = employees.stream()
+                .sorted(Comparator.comparingInt(Employee::getAge))
+                .toList();
+
+        /*// Sort the employees by name using a Comparator and the Stream API
+        List<Employee> sortedEmployees = employees.stream()
+                .sorted(Comparator.comparing(Employee::getName))
+                .toList();*/
+
+        // Print the sorted employees
+        for (Employee employee : sortedEmployees) {
+            System.out.println("Name: " + employee.getName() + ", Age: " + employee.getAge());
+        }
+    }
+}
+----------------------------------------------------
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.stream.Collectors;
+
+public class EmployeeSortExample {
+
+    public static void main(String[] args) {
+
+        final var employeeList = Arrays.asList(new Employee("Albert", 20),
+                new Employee("Charlie", 40),
+                new Employee("Bob", 32));
+
+        final var sortedEmployeeList = employeeList.stream()
+                .sorted(Comparator.comparingInt(Employee::getAge)
+                        .reversed())
+                .collect(Collectors.toList());
+
+        for (Employee emp : sortedEmployeeList) {
+            System.out.println(emp);
+        }
+
+    }
+}
+____________________________________________________
