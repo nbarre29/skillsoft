@@ -1,0 +1,25 @@
+-> "Alt + Insert" Generate Constructor, toString, Getter and Setter
+
+-> Navigate between opened files, Ctrl + Tab
+
+-> "Ctrl + F12" Check members of a class
+
+-> "Ctrl + F4" Close an opened file
+
+-> "Ctrl + Alt + H" Open in Hierarchy
+
+-> File -> Settings -> Editor -> General -> Auto Import -> select the checkbox "Add unambiguous imports on the fly"
+
+-> Remove unused imports: Code -> Optimize Imports (Ctrl+Alt+O)
+
+-> File -> Settings -> Editor -> General -> Code Completion -> select the checkbox "Show the documentation popup in 1 ms"
+
+-> File -> Project Structure -> Platform Settings -> SDKs -> Configure "JDK home path" - In "Sourcepath" tab point to the src.zip
+
+-> Code -> Surround With (Ctrl + Alt + T)
+
+-> Highlight the code you want to extract to a variable and press Ctrl+Alt+V (Windows/Linux), to extract it.
+
+https://www.jetbrains.com/help/idea/migrating-from-eclipse-to-intellij-idea.html#Shortcuts
+
+https://www.jetbrains.com/help/idea/extract-constant.html
